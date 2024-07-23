@@ -5,7 +5,7 @@ export const exporter = async (elements: Elements, live2d: Live2DViewer, bitrate
   let r: string;
   const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
   const videoStream = canvas.captureStream(fps);
-  const mediaOptions = { mimeType: "video/webm; codecs=vp9", videoBitsPerSecond: bitrate * 1024 * 1024 };
+  const mediaOptions = { mimeType: "video/mov; codecs=h264", videoBitsPerSecond: bitrate * 1024 * 1024 };
   const mediaRecorder = new MediaRecorder(videoStream, mediaOptions);
 
   const chunks: Blob[] = [];
